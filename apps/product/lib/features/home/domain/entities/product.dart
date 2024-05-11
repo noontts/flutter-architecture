@@ -6,12 +6,12 @@ class ProductToDisplay {
   late final double price;
   late final String? desciption;
 
-  ProductToDisplay(
-      {required this.id,
-      required this.category,
-      required this.imageUrl,
-      required this.name,
-      required this.price,
-      this.desciption,
+  ProductToDisplay({
+    required this.id,
+    required this.category,
+    required this.imageUrl,
+    required this.name,
+    required this.price,
+    this.desciption,
   });
 }

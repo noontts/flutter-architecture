@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:product/infrastructure/dependency_injection/inject.dart';
 
 void main() {
   runApp(const MyApp());
+  registerProductServices();
 }
 
 class MyApp extends StatelessWidget {

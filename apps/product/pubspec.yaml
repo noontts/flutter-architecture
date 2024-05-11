@@ -32,6 +32,8 @@ dependencies:
     sdk: flutter
   core_ui:
     path: ../../packages/core_ui/
+  core_libs:
+    path: ../../packages/core_libs/
   cupertino_icons: ^1.0.6
   touchable_opacity: ^1.2.0
 

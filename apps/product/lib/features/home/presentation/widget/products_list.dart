@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:product/home/presentation/widget/product_card.dart';
-import 'package:product/home/domain/entities/product.dart';
+import 'package:product/features/home/presentation/widget/product_card.dart';
+import 'package:product/features/home/domain/entities/product.dart';
 
 typedef OnSelectProduct = Function(ProductToDisplay productToDisplay);
 

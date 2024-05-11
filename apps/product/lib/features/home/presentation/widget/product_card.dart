@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:touchable_opacity/touchable_opacity.dart';
-import 'package:product/home/domain/entities/product.dart';
-import 'package:product/home/presentation/widget/product_info.dart';
+import 'package:product/features/home/domain/entities/product.dart';
+import 'package:product/features/home/presentation/widget/product_info.dart';
 
 typedef ProductCardType = Function(ProductToDisplay product);
 
