@@ -1,18 +1,24 @@
+import 'package:core_ui/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:product/features/home/presentation/viewmodels/home_view_model.dart';
 import 'package:product/features/home/presentation/widget/product_card.dart';
 import 'package:product/features/home/domain/entities/product.dart';
 
 typedef OnSelectProduct = Function(ProductToDisplay productToDisplay);
 
-class ProductList extends StatelessWidget {
+class ProductList extends ConsumerWidget {
   final List<ProductToDisplay> productList;
-  final OnSelectProduct? onSelectProduct;
 
-  const ProductList({super.key, required this.productList, this.onSelectProduct});
+  const ProductList({super.key, required this.productList});
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final homeVMNotifier = ref.read(homeViewModelProvider.notifier);
+    final themeProvider = ref.watch(appThemeProvider).themeColor;
+
+    return Container(
+      color: themeProvider.backgroundPrimary,
       height: 250,
       child: Padding(
         padding: const EdgeInsets.only(bottom: 15.0),
@@ -20,7 +26,9 @@ class ProductList extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: productList.length,
           itemBuilder: (context, index) {
-            return ProductCard(product: productList[index], onTap: onSelectProduct,);
+            return ProductCard(key: UniqueKey(),
+              product: productList[index],
+              onTap: (product) => homeVMNotifier.onSelectProduct(context, product),);
           }),
         ),
       );

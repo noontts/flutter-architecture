@@ -7,3 +7,7 @@ ide:
 packages:
   - apps/**
   - packages/**
+
+scripts:
+  gen:
+    run: 'flutter pub run build_runner build'

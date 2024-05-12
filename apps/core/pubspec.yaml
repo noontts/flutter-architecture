@@ -15,8 +15,12 @@ dependencies:
     path: ../../packages/core_libs
   product:
     path: ../product
+  user:
+    path: ../user
   go_router: ^14.1.0
   google_nav_bar: ^5.0.6
+  riverpod: ^2.5.1
+  flutter_riverpod: ^2.5.1
 
 dev_dependencies:
   flutter_test:
